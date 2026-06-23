@@ -1,4 +1,4 @@
-# jinchenma-skill
+# jcm-skill
 
 金尘马公开版 AI Agent Skills。
 
@@ -7,10 +7,10 @@
 把下面这句话发给你的 AI Agent，让它帮你安装：
 
 ```text
-请从 https://github.com/jinchenma94/jinchenma-skill 安装 jinchenma-article-writing skill 到我的 AI Agent skills 目录。
+请从 https://github.com/jinchenma94/jcm-skill 安装 jcm-article-writing skill 到我的 AI Agent skills 目录。
 ```
 
-## jinchenma-article-writing
+## jcm-article-writing
 
 这是一个文章写作辅助 skill，主要用来做三件事：
 
@@ -30,7 +30,7 @@
 安装后，这个 skill 目录通常长这样：
 
 ```text
-skills/jinchenma-article-writing/
+skills/jcm-article-writing/
 ```
 
 然后直接对你的 AI Agent 说写作需求，例如：
@@ -42,11 +42,11 @@ skills/jinchenma-article-writing/
 如果你没有指定保存目录，生成的素材、索引、大纲和初稿会默认放到你当前项目目录下：
 
 ```text
-./jinchenma-article-writing-workspace/
+./jcm-article-writing-workspace/
 ```
 
 公开版文风规则在这里：
 
 ```text
-skills/jinchenma-article-writing/references/writing-style.md
+skills/jcm-article-writing/references/writing-style.md
 ```

@@ -1,9 +1,9 @@
 ---
-name: jinchenma-article-writing
+name: jcm-article-writing
 description: 文章写作前的素材整理、大纲协作与金尘马式 AI 干货写作规则加载。用户说“我要写一篇文章”“帮我做这个选题”“先搜素材”“全网搜攻略/教程/资料并保存”“写文章前先整理资料”“调整大纲”“我们讨论一下文章结构”，或提到“AI 干货”“面向小白讲清楚”“写得实用能收藏”“不要太技术要讲人话”时，必须使用本 skill。这个 skill 负责确认选题、明确素材来源、整理素材卡、建立素材索引、把讨论收敛成结果态大纲，并在 AI 干货写作场景下读取公开文风参考；如果用户没有提供保存目录，默认在用户当前项目目录下创建写作工作区，不要把用户生成内容写入 skill 安装目录。
 ---
 
-# Jinchenma Article Writing
+# JCM Article Writing
 
 这个 skill 用于把文章写作前的素材、规则和写作方向整理清楚，尤其适合“金尘马式 AI 干货写作”：面向小白、讲人话、解决具体问题，最后交付能收藏、能照着做的文章素材和结构。
 
@@ -14,8 +14,8 @@ description: 文章写作前的素材整理、大纲协作与金尘马式 AI 干
 - 资料整理只保留当前有效结果，不记录讨论过程。
 - 大纲协作只保留当前有效结构和约束，不记录来回讨论过程。
 - 没有用户明确给出的素材地址时，先问地址，不自作主张。
-- 没有用户明确给出的保存目录时，默认使用用户当前项目目录下的 `jinchenma-article-writing-workspace/articles/`。
-- 公开版默认读取本 skill 内的公开参考文件；如果用户有自己的风格文档，可以使用用户当前项目目录下的 `jinchenma-article-writing-workspace/style/` 保存和读取。
+- 没有用户明确给出的保存目录时，默认使用用户当前项目目录下的 `jcm-article-writing-workspace/articles/`。
+- 公开版默认读取本 skill 内的公开参考文件；如果用户有自己的风格文档，可以使用用户当前项目目录下的 `jcm-article-writing-workspace/style/` 保存和读取。
 - 不要把用户生成的素材、索引、大纲、初稿、改稿或个人风格文档写入 skill 安装目录。
 
 ## 能力边界
@@ -94,7 +94,7 @@ description: 文章写作前的素材整理、大纲协作与金尘马式 AI 干
 默认工作区位置在用户当前项目目录下：
 
 ```text
-./jinchenma-article-writing-workspace/
+./jcm-article-writing-workspace/
 ```
 
 这里的 `./` 指用户当前正在工作的项目目录，不是本 skill 的安装目录。如果无法判断当前项目目录，先询问用户希望把写作项目保存到哪里。
@@ -102,7 +102,7 @@ description: 文章写作前的素材整理、大纲协作与金尘马式 AI 干
 默认结构：
 
 ```text
-jinchenma-article-writing-workspace/
+jcm-article-writing-workspace/
   articles/
     {选题目录}/
       素材/
@@ -117,15 +117,15 @@ jinchenma-article-writing-workspace/
 使用规则：
 
 - 如果用户提供了保存目录，优先使用用户提供的目录。
-- 如果用户没有提供保存目录，默认在用户当前项目目录下创建 `jinchenma-article-writing-workspace/articles/{选题目录}/`。
+- 如果用户没有提供保存目录，默认在用户当前项目目录下创建 `jcm-article-writing-workspace/articles/{选题目录}/`。
 - `{选题目录}` 使用选题标题生成，去掉不适合作为文件名的符号，保持简短可读。
-- 素材卡默认保存到 `jinchenma-article-writing-workspace/articles/{选题目录}/素材/`。
-- 素材索引默认保存为 `jinchenma-article-writing-workspace/articles/{选题目录}/素材/00-素材索引.md`。
-- 大纲默认保存为 `jinchenma-article-writing-workspace/articles/{选题目录}/01-文章大纲.md`。
-- 初稿默认保存为 `jinchenma-article-writing-workspace/articles/{选题目录}/02-文章初稿.md`。
-- 如果用户想加入自己的文风规则但没有现成路径，默认让用户把规则写入或粘贴到 `jinchenma-article-writing-workspace/style/user-writing-style.md`。
+- 素材卡默认保存到 `jcm-article-writing-workspace/articles/{选题目录}/素材/`。
+- 素材索引默认保存为 `jcm-article-writing-workspace/articles/{选题目录}/素材/00-素材索引.md`。
+- 大纲默认保存为 `jcm-article-writing-workspace/articles/{选题目录}/01-文章大纲.md`。
+- 初稿默认保存为 `jcm-article-writing-workspace/articles/{选题目录}/02-文章初稿.md`。
+- 如果用户想加入自己的文风规则但没有现成路径，默认让用户把规则写入或粘贴到 `jcm-article-writing-workspace/style/user-writing-style.md`。
 - 如果默认工作区或子目录不存在，可以直接创建，不需要再次询问。
-- 不要在 `skills/jinchenma-article-writing/` 下创建用户文章项目。
+- 不要在 `skills/jcm-article-writing/` 下创建用户文章项目。
 
 ## 执行流程
 
@@ -191,7 +191,7 @@ jinchenma-article-writing-workspace/
 如果用户没有提供保存目录，默认创建并使用：
 
 ```text
-./jinchenma-article-writing-workspace/articles/{选题目录}/素材/
+./jcm-article-writing-workspace/articles/{选题目录}/素材/
 ```
 
 不要因为用户没给保存目录就卡住流程。
@@ -436,7 +436,7 @@ references/writing-style.md
 如果用户没有现成风格文档，但希望沉淀自己的文风，默认使用：
 
 ```text
-./jinchenma-article-writing-workspace/style/user-writing-style.md
+./jcm-article-writing-workspace/style/user-writing-style.md
 ```
 
 当这个文件不存在时，可以在用户当前项目目录下创建一个空模板，让用户后续补充。不要临时猜测私人目录，也不要默认读取本仓库外的任何本地资料。
@@ -470,7 +470,7 @@ references/writing-style.md
 - 用户提供的素材、素材索引或链接。
 - 当前确认的大纲。
 - 当前初稿。
-- 用户额外提供的风格文档、平台要求，或用户当前项目目录下 `jinchenma-article-writing-workspace/style/user-writing-style.md` 中已经填写的规则。
+- 用户额外提供的风格文档、平台要求，或用户当前项目目录下 `jcm-article-writing-workspace/style/user-writing-style.md` 中已经填写的规则。
 
 不要读取未由用户提供的本地目录。不要把私人知识库、私有样本或其他未公开文件当作默认审稿依据。
 
